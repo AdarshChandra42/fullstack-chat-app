@@ -6,6 +6,7 @@ export const protectRoute = async (req, res, next) => {
     const token = req.cookies.jwt;
     //once logged in, every request will have cookie attached to it. 
     //.jwt here refers to the name that we've given to our cookie in utils.js
+    //it's kind of confusing cuz the function is also called jwt and we've also named our cookie as jwt
 
     if (!token) {
       return res.status(401).json({ message: "Unauthorized - No Token Provided" });
